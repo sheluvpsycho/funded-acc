@@ -1,0 +1,196 @@
+═══════════════════════════════════════════════════════════════════════════════
+   🚀 FUNDEDNEXT CHALLENGE BOT - QUICK REFERENCE CHEAT SHEET
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 YOUR CHALLENGE NUMBERS
+─────────────────────────────────────────────────────────────────────────────
+  Account Size:              $50,000
+  Profit Target (Phase 1):   $2,500 (5%)
+  Max Loss Limit:            $1,500 (3%)
+  Max Open Positions:        3 trades
+  Risk Per Trade:            $200
+  
+✅ WHAT BOT DOES
+─────────────────────────────────────────────────────────────────────────────
+  1. Scans for moving average crossover signals
+  2. Enters LONG when 9-MA crosses above 21-MA
+  3. Enters SHORT when 9-MA crosses below 21-MA
+  4. Takes profit at +20 ticks automatically
+  5. Stops out at -15 ticks automatically
+  6. Closes ALL trades at 4:00 PM EST
+  7. Stops trading if daily profit = $2,500 ✓
+  8. Stops trading if daily loss = $1,500 ✗
+
+⏰ DAILY SCHEDULE
+─────────────────────────────────────────────────────────────────────────────
+  9:30 AM   → Market opens, bot starts scanning
+  9:30-3:30 PM → Bot trades actively
+  3:30 PM   → No new entries (last 30 mins)
+  4:00 PM   → ALL positions close automatically
+  
+📈 ENTRY SIGNALS
+─────────────────────────────────────────────────────────────────────────────
+  LONG Entry:
+    ✓ 9-MA > 21-MA (by more than 0.15%)
+    ✓ Price above both moving averages
+    ✓ Position opened in 1-3 contracts
+  
+  SHORT Entry:
+    ✓ 9-MA < 21-MA (by more than 0.15%)
+    ✓ Price below both moving averages
+    ✓ Position opened in 1-3 contracts
+
+🎯 EXIT SIGNALS
+─────────────────────────────────────────────────────────────────────────────
+  Automatic Take Profit:
+    Long:  Exit when price +20 ticks above entry → ~$250 gain
+    Short: Exit when price -20 ticks below entry → ~$250 gain
+  
+  Automatic Stop Loss:
+    Long:  Exit when price -15 ticks below entry → ~$188 loss
+    Short: Exit when price +15 ticks above entry → ~$188 loss
+  
+  Session Close:
+    Time:  4:00 PM EST (every day)
+    Action: Close ALL remaining positions
+  
+  Daily Targets:
+    Hit $2,500 profit → BOT STOPS (don't trade anymore)
+    Hit $1,500 loss → BOT STOPS (don't trade anymore)
+
+💰 POSITION SIZING
+─────────────────────────────────────────────────────────────────────────────
+  MES (Micro S&P 500):
+    1 tick = $1.25
+    Stop = 15 ticks = $18.75 per contract
+    $200 risk ÷ $18.75 = ~10-11 contracts per entry
+  
+  MNQ (Micro NASDAQ):
+    1 tick = $2.00
+    Stop = 15 ticks = $30 per contract
+    $200 risk ÷ $30 = ~6-7 contracts per entry
+  
+  MYM (Micro Dow):
+    1 tick = $0.50
+    Stop = 15 ticks = $7.50 per contract
+    $200 risk ÷ $7.50 = ~25-27 contracts per entry
+
+✅ BEFORE STARTING BOT
+─────────────────────────────────────────────────────────────────────────────
+  ☐ Open NinjaTrader
+  ☐ Log in to FundedNext account
+  ☐ Verify $50,000 balance
+  ☐ Select chart (1-hour or 15-minute)
+  ☐ Add Strategy → FundedNext_Challenge_Bot
+  ☐ Monitor first 30 minutes to confirm entry signals
+  ☐ Watch for first trade signal
+
+⚠️ DURING TRADING DAY
+─────────────────────────────────────────────────────────────────────────────
+  DON'T:
+    ✗ Modify stop loss/take profit during trade
+    ✗ Exit manually before stops/targets hit
+    ✗ Add extra positions beyond strategy limits
+    ✗ Trade after 3:30 PM (last 30 mins)
+    ✗ Trade during major economic news
+  
+  DO:
+    ✓ Monitor positions every 30-60 mins
+    ✓ Keep account dashboard visible
+    ✓ Note profit/loss progress
+    ✓ Let bot execute all exits automatically
+    ✓ Review trade log at end of day
+
+🎯 SUCCESS MILESTONES
+─────────────────────────────────────────────────────────────────────────────
+  Day 1-2:  Get 3-5 wins to build confidence
+  Day 3:    Hit $2,500 profit → Phase 1 COMPLETE ✓
+  Day 4-10: Phase 2 runs (lower profit target $1,000)
+  Day 15:   Complete Phase 2 → GET FUNDED 🚀
+
+📊 DAILY REVIEW (do this at 4:15 PM)
+─────────────────────────────────────────────────────────────────────────────
+  Total Trades:        _____
+  Winning Trades:      _____
+  Losing Trades:       _____
+  Win Rate %:          _____% (target: 55%+)
+  Daily P&L:           $_____
+  Remaining to Target: $_____
+  Largest Win:         $_____
+  Largest Loss:        $_____
+  
+  Notes:
+  ─────────────────────────────────────────────────────────────────────────
+  [Write anything unusual that happened]
+
+🚨 IF SOMETHING GOES WRONG
+─────────────────────────────────────────────────────────────────────────────
+  Bot won't start:
+    → Restart NinjaTrader
+    → Check: Tools → Compile Strategies
+  
+  Orders not filling:
+    → Check internet connection
+    → Verify account is logged in
+    → Increase slippage tolerance
+  
+  Position sizes wrong:
+    → Check tick value for instrument
+    → Recalculate: $200 ÷ (15 ticks × tick value)
+  
+  Bot losing too much:
+    → Reduce position size by 20%
+    → Tighter stops (12 ticks instead of 15)
+    → Skip trading first 15 mins of open
+
+💡 PRO TIPS
+─────────────────────────────────────────────────────────────────────────────
+  1. First 30 mins (9:30-10 AM) = High volatility, may see 2-3 signals
+  2. Mid-day (11 AM-2 PM) = Most stable, best for reliable bot trades
+  3. Last hour (3-4 PM) = Avoid new entries, let existing ones close
+  4. Monday = Higher volatility after weekend
+  5. Friday = Watch for end-of-week profit taking
+  6. If down $1,000 by 2 PM = Tighten stops to preserve capital
+
+🔄 DAILY CHECKLIST
+─────────────────────────────────────────────────────────────────────────────
+  Morning Setup (8:00 AM):
+    ☐ Turn on computer, internet ON
+    ☐ Open NinjaTrader
+    ☐ Log into FundedNext account
+    ☐ Check balance = $50,000 (minus any previous P&L)
+    ☐ Load chart with FundedNext_Challenge_Bot
+    ☐ Prepare coffee ☕
+  
+  Trading Day (9:30 AM - 4:00 PM):
+    ☐ Monitor first 30 mins
+    ☐ Check positions at 11:00 AM
+    ☐ Check positions at 1:00 PM
+    ☐ Check positions at 3:00 PM
+    ☐ Let bot close all positions at 4:00 PM
+  
+  End of Day (4:15 PM):
+    ☐ Review daily P&L
+    ☐ Document trades in log
+    ☐ Check if target hit ($2,500)
+    ☐ Check if loss limit hit ($1,500)
+    ☐ Note any unusual activity
+    ☐ Plan for tomorrow
+
+═══════════════════════════════════════════════════════════════════════════════
+                    ✅ YOU'RE READY TO START TRADING!
+═══════════════════════════════════════════════════════════════════════════════
+
+Next Steps:
+  1. Open FundedNext_Challenge_Bot.cs in NinjaTrader
+  2. Compile the strategy
+  3. Add to chart
+  4. Paper trade for 1 day (no real money)
+  5. Go LIVE when confident
+  6. Hit $2,500 profit by Day 3
+  7. Complete Phase 2
+  8. GET FUNDED! 🚀
+
+Good luck! You've got this! 💎
+
+═══════════════════════════════════════════════════════════════════════════════
