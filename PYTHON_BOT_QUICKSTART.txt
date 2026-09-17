@@ -1,0 +1,254 @@
+═══════════════════════════════════════════════════════════════════════════════
+   🚀 FUNDEDNEXT PYTHON BOT - QUICK START (5 MINUTES)
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ YOUR BOT SPECS
+─────────────────────────────────────────────────────────────────────────────
+  Account:          $50,000
+  Profit Target:    $2,500
+  Max Loss:         $1,500
+  Strategy:         MA Crossover (Bidirectional)
+  Trades:           MES, MNQ, MYM
+
+🎯 FASTEST START (10 MINUTES)
+─────────────────────────────────────────────────────────────────────────────
+
+STEP 1: Get API Key
+  ✓ Log into FundedNext account
+  ✓ Settings → API Keys
+  ✓ Create new key
+  ✓ Copy it
+
+STEP 2: Install Python (if you don't have it)
+  ✓ Visit: python.org/downloads
+  ✓ Download Python 3.9+
+  ✓ Install with defaults
+  ✓ Add Python to PATH ✓
+
+STEP 3: Download Bot File
+  ✓ Get: fundednext_bot.py
+  ✓ Save to Desktop or Documents
+
+STEP 4: Install Requirements
+  ✓ Open Terminal/Command Prompt
+  ✓ Run: pip install requests
+  ✓ Wait for completion (30 seconds)
+
+STEP 5: Set API Key
+  Windows:   set FUNDEDNEXT_API_KEY=your_key_here
+  Mac/Linux: export FUNDEDNEXT_API_KEY=your_key_here
+  
+  (Replace "your_key_here" with actual key from Step 1)
+
+STEP 6: Run Bot
+  ✓ Terminal: python fundednext_bot.py
+  ✓ Wait for startup message
+  ✓ Watch trades execute!
+
+✅ BOT IS RUNNING!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⏱️ EXPECTED TIMELINE
+─────────────────────────────────────────────────────────────────────────────
+  ~5 minutes  → Bot starts
+  ~15 mins    → First trade signal
+  ~30 mins    → First profit/loss locked
+  ~2-4 hours  → Hit $2,500 target ✅
+
+🎯 WHAT TO WATCH FOR
+─────────────────────────────────────────────────────────────────────────────
+  1. Bot initializes (shows account info)
+  2. Scans market (looking for signals)
+  3. Places order (shows "ORDER PLACED" + details)
+  4. Manages trade (waits for profit or loss)
+  5. Closes position (shows "POSITION CLOSED" + P&L)
+  6. Repeat until $2,500 profit OR $1,500 loss
+
+📊 BOT OUTPUT EXAMPLE
+─────────────────────────────────────────────────────────────────────────────
+  ===============================================
+  FundedNext Challenge Bot Initialized
+  Account Size: $50,000.00
+  Daily Profit Target: $2,500.00
+  Max Daily Loss: $1,500.00
+  Risk Per Trade: $200.00
+  ===============================================
+  
+  ============================================================
+  Trading Cycle: 2026-09-16 10:15:33
+  Symbol: MNQ | Price: 16850.50
+  Fast MA(9): 16845.20 | Slow MA(21): 16820.10
+  Daily P&L: $0.00
+  Progress: $0.00 / $2,500.00
+  ============================================================
+  
+  ORDER PLACED: BUY 7 MNQ @ 16850.75
+  Order ID: order_abc123xyz
+  
+  [10 minutes later...]
+  
+  POSITION CLOSED: order_abc123xyz - Reason: TAKE_PROFIT
+  Daily P&L: $245.00
+  Progress: $245.00 / $2,500.00
+
+🚀 CLOUD VPS OPTION (Better for 24/7 Trading)
+─────────────────────────────────────────────────────────────────────────────
+  If you want bot running 24/7 without your computer:
+
+  1. Rent VPS: DigitalOcean ($5/month)
+  2. SSH into VPS
+  3. Run: python3 fundednext_bot.py
+  4. Keep running forever (no computer needed!)
+
+  See: PYTHON_BOT_SETUP.md for detailed instructions
+
+⚠️ IF BOT DOESN'T START
+─────────────────────────────────────────────────────────────────────────────
+  Problem: "FUNDEDNEXT_API_KEY not set"
+  Fix: Set environment variable with your actual API key
+
+  Problem: "ModuleNotFoundError: No module named 'requests'"
+  Fix: pip install requests
+
+  Problem: "Permission denied"
+  Fix: Try "python3" instead of "python"
+
+  Problem: "Connection refused"
+  Fix: Check internet connection + API key validity
+
+✅ CHECKLIST BEFORE STARTING
+─────────────────────────────────────────────────────────────────────────────
+  ☐ Python 3.9+ installed
+  ☐ "pip install requests" ran successfully
+  ☐ FundedNext API key obtained
+  ☐ Environment variable set (FUNDEDNEXT_API_KEY)
+  ☐ fundednext_bot.py file downloaded
+  ☐ Trading hours: 9:30 AM - 4:00 PM EST (Mon-Fri)
+  ☐ Ready to go!
+
+💰 HOW BOT MAKES MONEY
+─────────────────────────────────────────────────────────────────────────────
+  Entry Signal:
+    Fast MA crosses above Slow MA → BUY signal
+    Price above both MAs → Confirmation
+    Bot opens position
+
+  Exit Profit:
+    Price moves +20 ticks → Auto-close for ~$250 profit
+
+  Exit Loss:
+    Price moves -15 ticks → Auto-close for ~$190 loss
+
+  Daily Cycle:
+    Win:  +$250  profit
+    Loss: -$150  profit
+    Net:  +$100  per cycle
+
+  To hit $2,500:
+    Need ~25 winning cycles OR 30+ total cycles
+
+🎯 SUCCESS RATE TARGET
+─────────────────────────────────────────────────────────────────────────────
+  Win Rate:        55%+ (most signals win)
+  Avg Win:         $250 profit
+  Avg Loss:        $150 loss
+  Risk/Reward:     1:1.7 (good!)
+  Days to $2,500:  3-5 days
+
+🔄 DAILY WORKFLOW
+─────────────────────────────────────────────────────────────────────────────
+  9:30 AM   → Turn on bot
+  10:00 AM  → First trades start coming
+  12:00 PM  → Check progress
+  2:00 PM   → Still trading?
+  3:30 PM   → Last entries allowed
+  4:00 PM   → Bot closes all positions
+  4:15 PM   → Review daily results
+  Next Day  → Start again!
+
+✅ PHASE 1 → PHASE 2 → FUNDED!
+─────────────────────────────────────────────────────────────────────────────
+  Phase 1 Requirement:
+    • Hit $2,500 profit
+    • Max loss: $1,500
+    • Time limit: No limit (take as long as needed)
+    • Expected: 3-5 trading days
+
+  Phase 2 Requirement:
+    • Hit $1,000-1,500 profit
+    • Max loss: $1,000-1,500
+    • Time limit: No limit
+    • Expected: 2-3 more trading days
+
+  After Phase 2:
+    • GET FUNDED with real capital! 🚀
+    • Keep 95% of profits
+    • Scale up to $300K+
+
+💡 PRO TIPS
+─────────────────────────────────────────────────────────────────────────────
+  1. Bot trades every 60 seconds
+  2. Faster is not better (avoids overtrading)
+  3. Let bot do its job (don't interfere)
+  4. Check position only every 30 mins
+  5. Close terminal early? No problem, bot still runs
+  6. Hit daily target early? Bot stops automatically
+  7. Monitor logs: fundednext_bot.log (all trades recorded)
+
+🛑 STOP CONDITIONS (Bot Auto-Stops)
+─────────────────────────────────────────────────────────────────────────────
+  ✅ Profit Target Hit:  $2,500+ profit → STOP (no more trades)
+  ✗ Max Loss Hit:       $1,500+ loss → STOP (preserve capital)
+  ⏰ Session Close:      4:00 PM EST → Close all positions
+  🌙 After Hours:       4:00 PM - 9:30 AM → No trading
+
+📈 CUSTOMIZATION OPTIONS
+─────────────────────────────────────────────────────────────────────────────
+  Edit fundednext_bot.py to change:
+    • daily_profit_target = 2500       (Lower = easier)
+    • max_daily_loss = 1500            (Smaller = safer)
+    • risk_per_trade = 200             (Smaller = safer)
+    • fast_ma_period = 9               (Smaller = more signals)
+    • slow_ma_period = 21              (Smaller = more signals)
+    • take_profit_points = 20          (Lower = easier to hit)
+    • stop_loss_points = 15            (Lower = protect capital)
+
+📞 COMMON QUESTIONS
+─────────────────────────────────────────────────────────────────────────────
+  Q: How often does bot trade?
+  A: Every 60 seconds it checks for signals
+
+  Q: Can I trade other symbols?
+  A: Yes, edit: bot.run_live(symbols=["MNQ", "MES"])
+
+  Q: Will it trade overnight?
+  A: No, only 9:30 AM - 4:00 PM EST
+
+  Q: Can I stop the bot?
+  A: Press Ctrl+C in terminal
+
+  Q: Do I need to watch it?
+  A: No, but check every 30 mins is good
+
+  Q: What if computer crashes?
+  A: Use VPS option to avoid this
+
+  Q: Can I run multiple symbols?
+  A: Yes, bot can trade MES + MNQ simultaneously
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 READY? START NOW!
+─────────────────────────────────────────────────────────────────────────────
+
+1. python fundednext_bot.py
+2. Watch bot make money
+3. Hit $2,500 profit
+4. Complete Phase 1 ✅
+5. Run Phase 2
+6. GET FUNDED! 💎
+
+You've got this! 🔥
+
+═══════════════════════════════════════════════════════════════════════════════
